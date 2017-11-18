@@ -1,6 +1,6 @@
 {
-    "name": "peepitkm/laravel4-html-css-email-inliner",
-    "description": "Laravel 4 HTML & CSS Email Inliner Wrapper of PHP CssToInlineStyles (https://github.com/tijsverkoyen/CssToInlineStyles)",
+    "name": "peepitkm/laravel-html-css-email-inliner",
+    "description": "Laravel HTML & CSS Email Inliner Wrapper of PHP CssToInlineStyles (https://github.com/tijsverkoyen/CssToInlineStyles)",
     "license": "MIT",
     "authors": [
         {
