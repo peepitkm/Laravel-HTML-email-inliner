@@ -1,7 +1,6 @@
 <?php namespace Emil\Inliner;
 
-require_once('vendor/PHP-Premailer/Premailer.class.php');
-use Premailer;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
 class Inliner {
 
@@ -77,13 +76,9 @@ class Inliner {
      */
     public function inline($content)
     {
-        $premailer = new Premailer($content);
-
-        foreach($this->options as $name => $value)
-        {
-            $premailer->setArgument($name, $value);
-        }
-
-        return $premailer->getConvertedHtml();
+        // Create instance
+        $cssToInlineStyles = new CssToInlineStyles();
+        // Call convert($html, $css) function
+        return $cssToInlineStyles->convert($content);
     }
 }
