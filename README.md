@@ -1,43 +1,29 @@
-Laravel HTML Email Inliner
+Laravel 4 HTML & CSS Email Inliner
 ==========================
 
 To make HTML email work, you need to put all CSS rules inline to make sure it works everywhere. It's a pain when developing your code and that's why you want a package to do it on the fly.
 
-This is just a Laravel wrapper for PHP-premailer (https://github.com/onassar/PHP-Premailer)
+This is just a Laravel 4 wrapper for PHP CssToInlineStyles (https://github.com/tijsverkoyen/CssToInlineStyles)
 
 ## Installation
 
-### Ruby gems
+### Laravel 4
 
-This package require two Ruby Gems: Premailer and Getopt.
+Begin by installing this package through [Composer](https://getcomposer.org).
 
-	$ sudo gem install premailer
-	$ sudo gem install getopt
-
-Check this Gists for more info on dependencies on Ubuntu (Laravel Homestead): https://gist.github.com/emilsundberg/8ae10ca886058c683d13
-
-### Laravel
-
-Begin by installing this package through Composer.
-
-	$ composer require snowfire/beautymail
+	$ composer require peepitkm/laravel-html-css-email-inliner
 
 Add Inliner as a service provider in app.php
 
 	'providers' => [
-		Emil\Inliner\InlinerServiceProvider::class,
+		'Emil\Inliner\InlinerServiceProvider',
 	]
 
 Add Inliner alias
 
 	'aliases' => [
-		Emil\Inliner\Facades\Laravel\Inliner::class
+		'Inliner' => 'Emil\Inliner\Facades\Laravel\Inliner'
 	]
-
-## Laravel 4.2
-
-Use the `1.x` releases/branch
-
 
 ## Quick Example
 
@@ -55,24 +41,8 @@ Inliner::isDisabled();
 Inliner::isEnabled();
 ```
 
-#### Change an option
-```php
-Inliner::setOption('name', value);
-```
+## Known issues
 
-*Sending in an option that does not exist will throw*
-`InvalidArgumentException`
-
-##### Options
-
-* `css_to_attributes`
-* `include_link_tags`
-* `include_style_tags`
-* `input_encoding`
-* `preserve_reset`
-* `preserve_styles`
-* `remove_classes`
-* `remove_comments`
-* `remove_ids`
-* `remove_scripts`
-* `replace_html_entities`
+* no support for pseudo selectors
+* no support for [css-escapes](https://mathiasbynens.be/notes/css-escapes)
+* UTF-8 charset is not always detected correctly. Make sure you set the charset to UTF-8 using the following meta-tag in the head: `<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />`. _(Note: using `<meta charset="UTF-8">` does NOT work!)_
