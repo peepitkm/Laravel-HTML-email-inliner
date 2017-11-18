@@ -1,16 +1,24 @@
 {
-    "name": "emil/inliner",
-    "description": "",
+    "name": "peepitkm/laravel4-html-css-email-inliner",
+    "description": "Laravel 4 HTML & CSS Email Inliner Wrapper of PHP CssToInlineStyles (https://github.com/tijsverkoyen/CssToInlineStyles)",
     "license": "MIT",
     "authors": [
         {
             "name": "Emil Sundberg",
             "email": "emil@snowfire.net"
+        },{
+            "name": "Tijs Verkoyen",
+            "email": "css_to_inline_styles@verkoyen.eu",
+            "role": "Developer"
+        },{
+            "name": "Pornpat Paethong",
+            "email": "pornpat.pp@gmail.com"
         }
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.*|5.*"
+        "illuminate/support": "4.*",
+        "tijsverkoyen/css-to-inline-styles": "^2.2"
     },
     "autoload": {
         "psr-0": {
