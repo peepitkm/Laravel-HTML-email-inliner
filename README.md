@@ -29,7 +29,7 @@ Add Inliner alias
 
 Begin by installing this package through [Composer](https://getcomposer.org).
 
-	$ composer require peepitkm/laravel-html-css-email-inliner "1.*"
+	$ composer require peepitkm/laravel-html-css-email-inliner "1.x-dev"
 
 Add Inliner as a service provider in app.php
 
